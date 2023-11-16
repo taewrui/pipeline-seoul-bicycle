@@ -172,4 +172,4 @@ ENV/
 docker-compose.yml
 
 #
-credential.json
+credentials.json
