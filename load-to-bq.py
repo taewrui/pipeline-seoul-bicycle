@@ -1,7 +1,7 @@
 from google.cloud import bigquery
 from google.cloud import storage
 import os
-
+#
 credentials_path = "/app/credentials.json"
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials_path
 
