@@ -2,15 +2,16 @@ import requests
 import json
 import pandas as pd
 import os
+
 from google.cloud import storage
 
-credentials_path = "/app/delta-discovery-405105-1010a9d46e53.json"
+credentials_path = "/app/credentials.json"
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials_path
 
 bucket_name = 'bucket-sb'
 file_name = 'CycleRentData.csv'
 
-url = 'http://openapi.seoul.go.kr:8088/596a58424d74616538376853696674/json/tbCycleRentData/1/100/2023-11-16/9'
+url = 'http://openapi.seoul.go.kr:8088/596a58424d74616538376853696674/json/tbCycleRentData/101/200/2023-11-16/11'
 res = requests.get(url)
 js = res.json()
 
