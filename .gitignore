@@ -1,0 +1,25 @@
+# .gitignore
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# Virtual Environment
+venv/
+env/
+ENV/
+
+# Docker
+.docker/
+docker-compose.yml
+
+# JSON 형태의 인증 파일
+delta-discovery-405105-1010a9d46e53.json
+
+# 다른 환경 파일들
+.env
