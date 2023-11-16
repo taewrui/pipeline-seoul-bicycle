@@ -18,7 +18,6 @@ js = res.json()
 df = pd.DataFrame(js['rentData']['row'])
 df_csv = df.to_csv(index=False)
 
-
 client = storage.Client.from_service_account_json(credentials_path)
 bucket = client.get_bucket(bucket_name)
 blob = bucket.blob(file_name)
