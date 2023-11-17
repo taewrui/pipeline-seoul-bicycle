@@ -17,6 +17,7 @@ js = res.json()
 
 
 df = pd.DataFrame(js['rentData']['row'])
+df.drop(columns=['START_INDEX', 'END_INDEX', 'RNUM'], inplace=True)
 df_csv = df.to_csv(index=False)
 
 #Upload to GCS
