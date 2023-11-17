@@ -1,16 +1,20 @@
 from google.cloud import bigquery
 from google.cloud import storage
+from datetime import datetime, timedelta
 import os
-#
+
 credentials_path = "/app/credentials.json"
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials_path
 
 project_id = 'delta-discovery-405105'
 dataset_id = 'dataset_cycle'
-table_id = 'RentCycle'
+table_id = 'CycleRentData'
 
 bucket_name = 'bucket-sb'
-file_name = 'CycleRentData.csv'
+
+time = datetime.now() - timedelta(hours=1)
+time_str = time.strftime("%Y-%m-%d/") + str(time.hour)
+file_name = f'CycleRentData-{time_str.replace("/", "-")}.csv'
 
 bigquery_client = bigquery.Client.from_service_account_json(credentials_path)
 storage_client = storage.Client.from_service_account_json(credentials_path)
